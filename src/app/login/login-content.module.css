@@ -1,0 +1,234 @@
+/* Override do main-container apenas para login
+   Observação: .main-container é global (definido em AuthLayout.css). Para garantir override,
+   aplicamos a classe de módulo em conjunto com a global. */
+.mainContainer {
+  /* marca para emitir a classe no CSS Module, sem efeitos visuais */
+  --login-override: 1;
+}
+
+/* Aumenta especificidade para sobrescrever .main-container do AuthLayout
+  Nota: :global() garante que a classe global seja referenciada corretamente no CSS Module */
+:global(.main-container).mainContainer {
+  gap: 20px;
+  padding: 40px 88px 0px 88px;
+  min-height: 100dvh; /* ocupa altura total da tela */
+  height: auto; /* sobrescreve altura fixa do AuthLayout em alguns breakpoints */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header específico para login */
+.loginHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+  width: 100%;
+  max-width: 321px;
+}
+
+.signupLink {
+  width: 100%;
+  max-width: 321px;
+  height: 15px;
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  color: #e2e2e2;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.signupLink a {
+  color: #c4f120;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.signupLink a:hover {
+  color: #a8d30d;
+  text-decoration: none;
+}
+
+.title {
+  width: 100%;
+  max-width: 321px;
+  height: 32px;
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #ffffff;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* Content form (ajustado para acomodar espaçamento do botão) */
+.contentForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 0px;
+  gap: 36px;
+  width: 100%;
+  max-width: 321px;
+  height: auto;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+/* Linha do botão: mesma largura dos inputs */
+.buttonRow {
+  width: 100%;
+  max-width: 321px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* Em telas até 1024px, o botão segue a largura dos inputs */
+@media (max-width: 1024px) {
+  .buttonRow button {
+    width: 100%;
+  }
+}
+
+/* Forms (ajustado sem forgot password) */
+.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+  width: 100%;
+  max-width: 321px;
+  height: auto;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.authErrorBanner {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Media Queries para Responsividade */
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  .loginHeader {
+    gap: 20px;
+    align-items: center;
+  }
+
+  .signupLink {
+    text-align: center;
+    align-self: center;
+  }
+
+  .title {
+    text-align: center;
+    align-self: center;
+  }
+
+  .contentForm {
+    gap: 30px;
+    align-items: center;
+  }
+  .buttonRow {
+    max-width: 300px;
+  }
+
+  .forms,
+  .loginHeader {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 767px) {
+  .loginHeader {
+    gap: 20px;
+    align-items: center;
+  }
+
+  .signupLink {
+    text-align: center;
+    align-self: center;
+  }
+
+  .title {
+    text-align: center;
+    align-self: center;
+  }
+
+  .contentForm {
+    width: 100%;
+    gap: 35px;
+    align-items: center;
+  }
+
+  .forms {
+    gap: 20px;
+    align-items: center;
+  }
+
+  .forms,
+  .loginHeader {
+    width: 100%;
+    max-width: 350px;
+  }
+  .buttonRow {
+    max-width: 350px;
+  }
+}
+
+/* Tablets e Celulares - mesmo layout mobile */
+@media (max-width: 1024px) {
+  .loginHeader {
+    gap: 25px;
+    align-items: center;
+  }
+
+  .signupLink {
+    text-align: center;
+    align-self: center;
+  }
+
+  .title {
+    text-align: center;
+    align-self: center;
+  }
+
+  .contentForm {
+    width: 100%;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .forms {
+    gap: 20px;
+    align-items: center;
+  }
+
+  .forms,
+  .loginHeader {
+    width: 100%;
+    max-width: 400px;
+  }
+  .buttonRow {
+    max-width: 400px;
+  }
+}
