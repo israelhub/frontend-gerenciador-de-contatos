@@ -1,0 +1,186 @@
+/* Shared styles for modal components */
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Header */
+.modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  gap: 4px;
+  width: 321px;
+  height: 49px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.modal-title {
+  width: 273px;
+  height: 25px;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: #FFFFFF;
+  margin: 0;
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+
+.close-button {
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Divider */
+.modal-divider {
+  width: 321px;
+  height: 0px;
+  opacity: 0.2;
+  border: 1px solid #303030;
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* First divider (after header) */
+.modal-divider:nth-of-type(2) {
+  order: 1;
+}
+
+/* Second divider (before footer) */
+.modal-divider:nth-of-type(3) {
+  order: 3;
+}
+
+/* Content */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 16px;
+  gap: 8px; /* Ainda mais compacto entre os blocos */
+  width: 321px;
+  min-height: 411px;
+  height: auto;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+/* Text field wrapper (mantido para espaçamento/alinhamento) */
+.text-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+  width: 289px;
+  min-height: auto; /* Auto para se adaptar ao conteúdo */
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* Força altura consistente para todos os text-fields */
+.text-field .input-field {
+  width: 100%;
+}
+
+/* Footer */
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 12px;
+  gap: 13px;
+  width: 321px;
+  height: 70px;
+  flex: none;
+  order: 4;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.cancel-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 4px;
+  width: 85px;
+  height: 46px;
+  background: #303030;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: #FFFFFF;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.save-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 4px;
+  width: 67px;
+  height: 46px;
+  background: #C4F120;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: #111111;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.cancel-button:hover {
+  background: #111111;
+}
+
+.save-button:hover {
+  background: #A8D30D;
+}

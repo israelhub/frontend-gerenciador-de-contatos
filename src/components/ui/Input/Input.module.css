@@ -1,0 +1,184 @@
+.input-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+  width: 100%;
+  max-width: 321px;
+  flex: none;
+  flex-grow: 0;
+}
+
+.input-label {
+  width: 100%;
+  max-width: 321px;
+  height: 22px;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: #FFFFFF;
+  flex: none;
+  flex-grow: 0;
+}
+
+.input-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px;
+  gap: 4px;
+  width: 100%;
+  max-width: 321px;
+  height: 39px;
+  background: #1B1B1B;
+  border: 1px solid #303030; /* Estado default */
+  border-radius: 8px;
+  flex: none;
+  flex-grow: 0;
+  transition: border-color 0.2s ease;
+}
+
+/* Estado hover */
+.input-container:hover {
+  border-color: #FFFFFF;
+}
+
+/* Estado active/focus */
+.input-container:focus-within {
+  border-color: #C4F120;
+}
+
+/* Estado error */
+.input-field-error .input-container {
+  border-color: #E61E32;
+}
+
+.input-field-error .input-container:hover {
+  border-color: #E61E32; /* Mantém a cor de erro no hover */
+}
+
+.input-element {
+  width: 100%;
+  height: 20px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+
+.input-element::placeholder {
+  color: #777777;
+}
+
+.input-error-message {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Alinha topo para suportar múltiplas linhas */
+  padding: 0px;
+  gap: 4px;
+  width: 100%;
+  max-width: 321px;
+  height: auto;        /* Altura automática para mensagens longas */
+  min-height: 20px;    /* Mantém altura mínima igual às curtas */
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+  margin-top: 4px;
+  margin-bottom: 0;  /* Deixa o gap da .modal-content controlar o espaçamento */
+}
+
+.input-error-message .icon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  flex-grow: 0;
+}
+
+.input-error-message span {
+  flex: 1;
+  height: auto;          /* Permite múltiplas linhas */
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;     /* Altura de linha consistente */
+  letter-spacing: -0.03em;
+  color: #E2E2E2;
+  flex-grow: 1;
+  white-space: normal;    /* Permite quebra de linha */
+  word-break: break-word; /* Evita overflow com textos longos */
+}
+
+.input-help-message {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #AAAAAA;
+  margin-top: 2px;
+}
+
+/* Acessibilidade: esconde visualmente, mas mantém para leitores de tela */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .input-field,
+  .input-label,
+  .input-container,
+  .input-error-message {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 767px) {
+  .input-field,
+  .input-label,
+  .input-container,
+  .input-error-message {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .input-field,
+  .input-label,
+  .input-container,
+  .input-error-message {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* Força a mensagem de erro a aparecer por último em containers flexbox */
+.input-field > .input-error-message {
+  order: 999;
+}
+
+/* Espaçamento uniforme quando o Input for usado dentro de um contêiner global .text-field */
+:global(.text-field) .input-error-message {
+  margin-bottom: 0 !important;
+  margin-top: 4px !important;
+}

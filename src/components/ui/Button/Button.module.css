@@ -1,0 +1,83 @@
+.btn {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 12px;
+  gap: 4px;
+  background: #C4F120;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  transition: background-color 0.2s ease;
+  flex: none;
+  flex-grow: 0;
+  width: auto;
+}
+
+/* Utilitário opcional para ocupar largura total quando desejado */
+.btn-fullWidth {
+  display: flex;
+  width: 100%;
+}
+
+/* Torna o botão full-width apenas em telas até 1024px */
+.btn-fullWidthAtTablet {
+  width: auto;
+}
+
+@media (max-width: 1024px) {
+  .btn-fullWidthAtTablet {
+    display: flex;
+    width: 100%;
+  }
+}
+
+.btn:hover {
+  background: #A8D30D; /* Tom mais escuro do verde */
+}
+
+.btn:disabled {
+  background: #666666;
+  cursor: not-allowed;
+}
+
+.btn-label {
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: #111111;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Variants */
+.btn-primary {
+  background: #C4F120;
+}
+
+.btn-primary:hover {
+  background: #A8D30D; /* Tom mais escuro do verde */
+}
+
+.btn-secondary {
+  background: #303030;
+  border: none;
+}
+
+.btn-secondary .btn-label {
+  color: #FFFFFF;
+}
+
+.btn-secondary:hover {
+  background: #111111; /* Fica mais escuro no hover */
+}
+
+/* Responsive: comportamento padrão já é fluido; sem tamanhos fixos */
