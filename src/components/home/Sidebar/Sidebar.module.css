@@ -1,0 +1,107 @@
+/* Sidebar Component CSS Module */
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  box-sizing: border-box;
+}
+
+.sidebar__top { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.sidebar__mid { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  flex: 1;
+  justify-content: center;
+}
+
+.sidebar__nav { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+}
+
+.sidebar__navBtn { 
+  width: 48px; 
+  height: 48px; 
+  border-radius: 16px; 
+  border: none; 
+  background: #1B1B1B; 
+  color: #5E5E5E; 
+  display: grid; 
+  place-items: center; 
+  cursor: pointer; 
+  transition: background-color 0.2s ease; 
+}
+
+.sidebar__navBtn:hover { 
+  background: #303030; 
+}
+
+.sidebar__navBtn--active { 
+  background: #303030; 
+  color: #C4F120; 
+}
+
+.sidebar__navBtn--active:hover { 
+  background: #111111; 
+}
+
+.sidebar__user { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 4px; 
+  width: 111px; 
+  text-align: left; 
+}
+
+.sidebar__userLabel { 
+  font-size: 10px; 
+  line-height: 14px; 
+  font-weight: 700; 
+  color: #5E5E5E; 
+}
+
+.sidebar__userEmail { 
+  font-size: 10px; 
+  line-height: 14px; 
+  color: #E2E2E2; 
+}
+
+/* Layout responsivo para telas pequenas */
+@media (max-width: 1024px) {
+  /* Sidebar reorganizada */
+  .sidebar {
+    position: static;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 0;
+    width: 100%;
+  }
+
+  .sidebar__mid {
+    flex: none;
+    justify-content: flex-end;
+  }
+
+  .sidebar__nav {
+    flex-direction: row;
+  }
+
+  /* Sidebar user movido para baixo do contentCard */
+  .sidebar__user {
+    display: none; /* Será mostrado separadamente */
+  }
+}

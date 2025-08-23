@@ -1,0 +1,109 @@
+/* CSS Module para a página inicial (page.tsx) */
+
+.pageWrap {
+  padding: 20px 44px 20px 20px; /* padding assimétrico: menos à esquerda, mais à direita */
+  min-height: 100dvh;
+  background: #111111;
+  display: grid;
+  grid-template-columns: 111px 1fr;
+  gap: 24px;
+}
+
+.contentCard {
+  width: calc(100% - 40px); /* Subtrai apenas as margens laterais (20px * 2) */
+  max-width: none; /* Remove qualquer limitação de largura máxima */
+  margin: 50px 0px; /* 40px top/bottom, 20px left/right */
+  border-radius: 40px;
+  background: #1B1B1B;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+/* Mobile sidebar user - escondido por padrão */
+.mobile-sidebar-user {
+  display: none;
+}
+
+.sidebar__userLabel { 
+  font-size: 10px; 
+  line-height: 14px; 
+  font-weight: 700; 
+  color: #5E5E5E; 
+}
+
+.sidebar__userEmail { 
+  font-size: 10px; 
+  line-height: 14px; 
+  color: #E2E2E2; 
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  .contentCard { padding: 24px; }
+}
+
+/* Layout responsivo para telas pequenas */
+@media (max-width: 1024px) {
+  .pageWrap {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    overflow-x: hidden; /* Evita vazamento horizontal */
+  }
+
+  /* ContentCard centralizado */
+  .contentCard {
+    width: 100%;
+    margin: 0;
+    align-self: center;
+    box-sizing: border-box;
+    overflow: hidden; /* Evita vazamento do conteúdo */
+  }
+
+  /* Mostrar sidebar user mobile */
+  .mobile-sidebar-user {
+    display: flex !important;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    text-align: left;
+    padding: 16px 0;
+  }
+
+  .mobile-sidebar-user .sidebar__userLabel {
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 700;
+    color: #5E5E5E;
+  }
+
+  .mobile-sidebar-user .sidebar__userEmail {
+    font-size: 10px;
+    line-height: 14px;
+    color: #E2E2E2;
+  }
+}
+
+/* Telas muito pequenas - layout tipo card */
+@media (max-width: 768px) {
+  .contentCard {
+    padding: 16px;
+  }
+}
+
+/* Telas extra pequenas */
+@media (max-width: 480px) {
+  .pageWrap {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .contentCard {
+    padding: 12px;
+    border-radius: 20px;
+  }
+}

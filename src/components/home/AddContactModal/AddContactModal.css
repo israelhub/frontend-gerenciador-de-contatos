@@ -1,0 +1,125 @@
+@import '../../../styles/ModalShared.css';
+/* Modal */
+.add-contact-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px;
+  gap: 4px;
+  
+  position: relative;
+  width: 345px;
+  min-height: 570px;
+  height: auto;
+  
+  background: #111111;
+  border-radius: 16px;
+}
+
+/* Content specifics */
+/* .modal-content defined in shared */
+
+/* Avatar Section */
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 12px;
+  
+  width: 289px;
+  height: 128px;
+  margin-bottom: -8px; /* Reduz o espaço para o próximo elemento */
+  
+  border-radius: 12px;
+  
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 12px;
+  isolation: isolate;
+  
+  width: 64px;
+  height: 64px;
+  
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.avatar-image {
+  width: 64px;
+  height: 64px;
+  
+  background: #1B1B1B;
+  border-radius: 12px;
+  
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 0;
+}
+
+.add-photo-button {
+  box-sizing: border-box;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 4px;
+  
+  width: 114px;
+  height: 36px;
+  
+  border: 1px solid #303030;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.add-photo-button:hover {
+  background: #303030;
+}
+
+.add-photo-button span {
+  width: 82px;
+  height: 20px;
+  
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  
+  color: #FFFFFF;
+  
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Text field styles moved to shared */
+
+/* Footer styles moved to shared */
+
+.save-button:disabled {
+  background: #606060;
+  color: #999999;
+  cursor: not-allowed;
+}

@@ -1,0 +1,144 @@
+@import '../../../styles/ModalShared.css';
+
+/* Edit Contact Modal */
+.edit-contact-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px;
+  gap: 4px;
+  
+  position: relative;
+  width: 345px;
+  min-height: 570px;
+  height: auto;
+  
+  background: #111111;
+  border-radius: 16px;
+}
+
+/* Shared header/divider styles moved to shared */
+
+/* First divider (after header) */
+.modal-divider:nth-of-type(2) {
+  order: 1;
+}
+
+/* .modal-content shared */
+
+/* Photo Section */
+.photo-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 12px;
+  
+  width: 289px;
+  height: 128px;
+  margin-bottom: -8px; /* Reduz o espaço para o próximo elemento */
+  
+  border-radius: 12px;
+  
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.photo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 12px;
+  isolation: isolate;
+  
+  width: 64px;
+  height: 64px;
+  
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.user-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  overflow: hidden;
+  
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 0;
+}
+
+.user-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-placeholder {
+  width: 64px;
+  height: 64px;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTIiIGZpbGw9IiMxQjFCMUIiLz4KPHA+PHBhdGggZD0iTTIyLjI0OTcgNDFDMjMuNjY2MyAzOS45MTY2IDI1LjI0OTcgMzkuMDYyNSAyNi45OTk3IDM4LjQzNzVDMjguNzQ5NyAzNy44MTI1IDMwLjU4MyAzNy41IDMyLjQ5OTcgMzcuNUMzNC40MTYzIDM3LjUgMzYuMjQ5NyAzNy44MTI1IDM3Ljk5OTcgMzguNDM3NUMzOS43NDk3IDM5LjA2MjUgNDEuMzMzIDM5LjkxNjYgNDIuNzQ5NyA0MUM0My43MjE5IDM5Ljg2MTEgNDQuNDc4OCAzOC41Njk0IDQ1LjAyMDUgMzcuMTI1QzQ1LjU2MjIgMzUuNjgwNSA0NS44MzMgMzQuMTM4OSA0NS44MzMgMzIuNUM0NS44MzMgMjguODA1NSA0NC41MzQ0IDI1LjY1OTcgNDEuOTM3MiAyMy4wNjI1QzM5LjM0IDIwLjQ2NTMgMzYuMTk0MSAxOS4xNjY2IDMyLjQ5OTcgMTkuMTY2NkMyOC44MDUyIDE5LjE2NjYgMjUuNjU5NCAyMC40NjUzIDIzLjA2MjIgMjMuMDYyNUMyMC40NjUgMjUuNjU5NyAxOS4xNjYzIDI4LjgwNTUgMTkuMTY2MyAzMi41QzE5LjE2NjMgMzQuMTM4OSAxOS40MzcyIDM1LjY4MDUgMTkuOTc4OCAzNy4xMjVDMjAuNTIwNSAzOC41Njk0IDIxLjI3NzUgMzkuODYxMSAyMi4yNDk3IDQxWk0zMi40OTk3IDM0LjE2NjZDMzAuODYwOCAzNC4xNjY2IDI5LjQ3ODggMzMuNjA0MSAyOC4zNTM4IDMyLjQ3OTFDMjcuMjI4OCAzMS4zNTQxIDI2LjY2NjMgMjkuOTcyMiAyNi42NjYzIDI4LjMzMzNDMjYuNjY2MyAyNi42OTQ0IDI3LjIyODggMjUuMzEyNSAyOC4zNTM4IDI0LjE4NzVDMjkuNDc4OCAyMy4wNjI1IDMwLjg2MDggMjIuNSAzMi40OTk3IDIyLjVDMzQuMTM4NiAyMi41IDM1LjUyMDUgMjMuMDYyNSAzNi42NDU1IDI0LjE4NzVDMzcuNzcwNSAyNS4zMTI1IDM4LjMzMyAyNi42OTQ0IDM4LjMzMyAyOC4zMzMzQzM4LjMzMyAyOS45NzIyIDM3Ljc3MDUgMzEuMzU0MSAzNi42NDU1IDMyLjQ3OTFDMZUUNTI3NS40MTMgMzMuNjA0MSAzNC4xMzg2IDM0LjE2NjYgMzIuNDk5NyAzNC4xNjY2Wk0zMi40OTk3IDQ5LjE2NjZDMzAuMTk0MSA0OS4xNjY2IDI4LjAyNzUgNDguNzI5MSAyNS45OTk3IDQ3Ljg1NDFDMjMuOTcxOSA0Ni45NzkyIDIyLjIwOCA0NS43OTE3IDIwLjcwOCA0NC4yOTE2QzE5LjIwOCA0Mi43OTE2IDE4LjAyMDUgNDEuMDI3OCAxNy4xNDU1IDM5QzE2LjI3MDUgMzYuOTcyMiAxNS44MzMgMzQuODA1NSAxNS44MzMgMzIuNUMxNS44MzMgMzAuMTk0NCAxNi4yNzA1IDI4LjAyNzggMTcuMTQ1NSAyNkMxOC4wMjA1IDIzLjk3MjIgMTkuMjA4IDIyLjIwODMgMjAuNzA4IDIwLjcwODNDMjIuMjA4IDE5LjIwODMgMjMuOTcxOSAxOC4wMjA4IDI1Ljk5OTcgMTcuMTQ1OEMyOC4wMjc1IDE2LjI3MDggMzAuMTk0MSAxNS44MzMzIDMyLjQ5OTcgMTUuODMzM0MzNC44MDUyIDE1LjgzMzMgMzYuOTcxOSAxNi4yNzA4IDM4Ljk5OTcgMTcuMTQ1OEM0MS4wMjc1IDE4LjAyMDggNDIuNzkxMyAxOS4yMDgzIDQ0LjI5MTMgMjAuNzA4M0M0NS43OTEzIDIyLjIwODMgNDYuOTc4OCAyMy45NzIyIDQ3Ljg1MzggMjZDNDguNzI4OCAyOC4wMjc4IDQ5LjE2NjMgMzAuMTk0NCA0OS4xNjYzIDMyLjVDNDkuMTY2MyAzNC44MDU1IDQ4LjcyODggMzYuOTcyMiA0Ny44NTM4IDM5QzQ2Ljk3ODggNDEuMDI3OCA0NS43OTEzIDQyLjc5MTYgNDQuMjkxMyA0NC4yOTE2QzQyLjc5MTMgNDUuNzkxNyA0MS4wMjc1IDQ2Ljk3OTIgMzguOTk5NyA0Ny44NTQxQzM2Ljk3MTkgNDguNzI5MSAzNC44MDUyIDQ5LjE2NjYgMzIuNDk5NyA0OS4xNjY2WiIgZmlsbD0iIzVFNUU1RSIvPgo8L3N2Zz4K') no-repeat center;
+  border-radius: 12px;
+}
+
+.substitute-photo-button {
+  box-sizing: border-box;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 4px;
+  
+  width: 89px;
+  height: 36px;
+  
+  border: 1px solid #303030;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.substitute-photo-button:hover {
+  background: #303030;
+}
+
+.substitute-photo-button span {
+  width: 57px;
+  height: 20px;
+  
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  
+  color: #FFFFFF;
+  
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* Text field styles moved to shared */
+
+/* Shared divider order in shared */
+
+/* Footer styles moved to shared; only component-specific states here */
+.save-button:disabled {
+  background: #606060;
+  color: #999999;
+}
