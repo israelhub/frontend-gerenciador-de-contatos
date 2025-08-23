@@ -1,0 +1,186 @@
+/* Header específico para cadastro */
+.cadastroHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+  max-width: 321px;
+}
+
+.loginLink {
+  width: 100%;
+  max-width: 321px;
+  height: 15px;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  color: #E2E2E2;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.loginLink a {
+  color: #C4F120;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.loginLink a:hover {
+  color: #A8D30D;
+  text-decoration: none;
+}
+
+.title {
+  width: 100%;
+  max-width: 321px;
+  height: 32px;
+  font-family: 'Schibsted Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #FFFFFF;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* Content form (gap de 88px entre o último input e o botão) */
+.contentForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 0px;
+  gap: 88px; /* Espaçamento desejado entre o bloco de inputs e o botão */
+  width: 100%;
+  max-width: 321px;
+  height: auto;
+  min-height: 600px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+/* Forms (sem altura fixa para eliminar espaçamento extra) */
+.forms {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px; /* Menor espaço entre campos individuais */
+  width: 100%;
+  max-width: 321px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* Media Queries para Responsividade */
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  .cadastroHeader {
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .loginLink {
+    text-align: center;
+    align-self: center;
+  }
+  
+  .title {
+    text-align: center;
+    align-self: center;
+  }
+  
+  .contentForm { gap: 32px; }
+  /* Botão acompanha a largura dos inputs */
+  .contentForm > button { width: 100%; max-width: 300px; }
+  
+  .forms,
+  .cadastroHeader {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 767px) {
+  .cadastroHeader {
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .loginLink {
+    text-align: center;
+    align-self: center;
+  }
+  
+  .title {
+    text-align: center;
+    align-self: center;
+  }
+  
+  .contentForm { width: 100%; gap: 48px; align-items: center; }
+  /* Botão acompanha a largura dos inputs */
+  .contentForm > button { width: 100%; max-width: 350px; }
+  
+  .forms {
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .forms,
+  .cadastroHeader {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+/* Tablets e Celulares - mesmo layout mobile */
+@media (max-width: 1024px) {
+  .cadastroHeader {
+    gap: 25px;
+    align-items: center;
+  }
+  
+  .loginLink {
+    text-align: center;
+    align-self: center;
+  }
+  
+  .title {
+    text-align: center;
+    align-self: center;
+  }
+  
+  .contentForm { width: 100%; gap: 64px; align-items: center; }
+  /* Botão acompanha a largura dos inputs */
+  .contentForm > button { width: 100%; max-width: 400px; }
+  
+  .forms {
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .forms,
+  .cadastroHeader {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+/* Ajuste para telas com altura menor */
+@media (max-height: 750px) {
+  .contentForm {
+  gap: 56px; /* Alturas menores: manter confortável sem estourar */
+  }
+}
