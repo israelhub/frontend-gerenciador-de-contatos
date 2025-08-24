@@ -15,14 +15,25 @@ import {
 const LOCALHOST_URL = "http://localhost:8000/api";
 const PRODUCTION_URL = "https://backend-gerenciador-de-contatos.onrender.com/api";
 
-// Função para detectar se o localhost está disponível
+// Função para detectar a melhor BASE_URL considerando variáveis de ambiente e disponibilidade local
 async function detectBaseUrl(): Promise<string> {
-  // Se estiver no server-side, use a variável de ambiente ou produção
+  // Se estiver no server-side, use a variável de ambiente ou localhost para desenvolvimento
   if (typeof window === "undefined") {
-    return process.env.NEXT_PUBLIC_API_BASE_URL || PRODUCTION_URL;
+    // Em desenvolvimento, sempre tenta localhost primeiro
+    if (process.env.NODE_ENV === "development") {
+      return process.env.NEXT_PUBLIC_API_BASE_URL || process.env.NEXT_PUBLIC_API_URL || LOCALHOST_URL;
+    }
+    return process.env.NEXT_PUBLIC_API_BASE_URL || process.env.NEXT_PUBLIC_API_URL || PRODUCTION_URL;
   }
 
-  // No client-side, tenta localhost primeiro
+  // No client-side: se foi definida uma BASE_URL pública, honre-a primeiro
+  const envBaseUrl = (process.env.NEXT_PUBLIC_API_BASE_URL || process.env.NEXT_PUBLIC_API_URL || "").trim();
+  if (envBaseUrl) {
+    console.log('🟢 Usando BASE_URL definida por env:', envBaseUrl);
+    return envBaseUrl;
+  }
+
+  // Sem env explícita, tenta localhost primeiro
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 2000); // 2 segundos de timeout
