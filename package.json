@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-  "build": "next build --turbopack",
-  "vercel-build": "next build",
+    "build": "next build --turbopack",
+    "vercel-build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
+    "@types/node": "^20.19.11",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
